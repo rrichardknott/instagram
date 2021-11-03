@@ -1,0 +1,227 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#body {
+  height: 100vh;
+  min-height: 720px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  background-color: #f1f1f1;
+  position: relative;
+}
+
+#phone-image-container {
+  display: none;
+}
+
+#card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid lightgray;
+  padding: 15px;
+  margin-top: -125px;
+  width: 350px;
+}
+
+#title {
+  font-family: "Grand Hotel", cursive;
+  font-size: 64px;
+  padding-bottom: 20px;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 25px;
+}
+
+input[type="email"],
+input[type="password"] {
+  font-size: 12px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#hr-text-container {
+  max-width: 100%;
+}
+
+#hr-text {
+  text-align: center;
+  position: relative;
+  border: 0;
+  margin: 15px 10px;
+}
+
+#hr-text::before {
+  content: "";
+  position: absolute;
+  background-color: lightgray;
+  left: 0;
+  top: 12px;
+  width: 100%;
+  height: 1px;
+}
+
+#hr-text::after {
+  content: attr(data-content);
+  position: relative;
+  display: inline-block;
+  padding: 0 1em;
+  line-height: 1.5em;
+  color: #818078;
+  background-color: #fcfcfa;
+}
+
+#login-button {
+  font-size: 14px;
+  margin-top: 10px;
+  padding: 5px;
+  color: #ffffff;
+  background-color: #b2dffc;
+  border: none;
+  border-radius: 5px;
+}
+
+#facebook {
+  margin-bottom: 20px;
+}
+
+#fontawesome-facebook {
+  font-size: 16px;
+  color: darkblue;
+}
+
+#forgot-password {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+#sign-up {
+  font: 14px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid lightgray;
+  max-width: 375px;
+}
+
+#sign-up p {
+  padding: 15px;
+}
+
+#sign-up a {
+  text-decoration: none;
+  color: #7ab7e0;
+}
+
+#app {
+  padding: 7px;
+  font-size: 16px;
+}
+
+#app-container {
+  display: flex;
+}
+
+#app-store,
+#google-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border: none;
+}
+
+#app-store img,
+#google-play img {
+  height: 40px;
+  width: auto;
+  border: none;
+}
+
+#footer {
+  position: absolute;
+  bottom: 100px;
+  width: 70%;
+  max-height: 0;
+  color: gray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* margin-top: auto; */
+}
+#footer p {
+  text-align: center;
+  font-size: 13px;
+  padding: 10px;
+}
+
+/* ================ MEDIA QUERIES ================ */
+@media only screen and (min-width: 992px) {
+  #phone-image-container {
+    display: flex;
+    position: relative;
+    top: -100%;
+    flex-direction: column;
+    animation-name: show-image;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+  }
+
+  #front-image1,
+  #front-image {
+    position: absolute;
+    top: 71px;
+    left: 145px;
+    width: 250px;
+    height: 460px;
+    border: 2px solid black;
+  }
+
+  #front-image1 {
+    animation-name: change-opacity;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes show-image {
+    0% {
+      display: flex;
+    }
+    50% {
+      top: 25%;
+    }
+    100% {
+      top: -6%;
+    }
+  }
+  @keyframes change-opacity {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #footer p {
+    padding: 5px;
+  }
+}
